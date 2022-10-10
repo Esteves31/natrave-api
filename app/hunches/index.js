@@ -20,8 +20,8 @@ export const create = async ctx => {
         
         const userId = data.sub
         const { gameId } = ctx.request.body
-        const homeTeamScore = ctx.request.body.homeTeamScore
-        const awayTeamScore = ctx.request.body.awayTeamScore
+        const homeTeamScore = parseInt(ctx.request.body.homeTeamScore)
+        const awayTeamScore = parseInt(ctx.request.body.awayTeamScore)
 
         try{  
             const [hunch] = await prisma.hunch.findMany({
