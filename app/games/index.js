@@ -8,8 +8,9 @@ export const list = async (ctx) => {
 
     const where = currentDate ? {
             gameTime: {
-            gte: currentDate,
-            lt: formatISO(addDays(new Date(currentDate), 1))}
+                gte: currentDate,
+                lt: formatISO(addDays(new Date(currentDate), 1))
+            }
     } : {}
 
     try { 
